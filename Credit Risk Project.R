@@ -1,4 +1,8 @@
-data <- read.csv("cs-training.csv")
+####### Data Loading ######
+library(data.table)
+data <- fread("cs-training.csv")
+data <- data.frame(data)
+# data <- read.csv("cs-training.csv")
 data <- data[,-1]
 train.data <- data[1:100000,] # training data
 test.data <- data[100001:150000,] # test data
